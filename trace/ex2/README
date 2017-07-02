@@ -1,0 +1,15 @@
+## This is the document for the pfabric experiments
+
+## pfabric.sh is the shell code for the pfabric experiment
+## some params should be taken care when using them 
+## destdir: the destination direction you want to put your data into 
+## tcl_script : the tcl file you want to execute
+## top_dir: the top dir of the code
+## the topolog_spt topology_tors and topology_spines just corresponds the data center topology
+
+## The same paras is just for the dctcp.sh
+
+## for the c++  code, for the params we need most are the dir of all the flows
+
+
+## experimnts.sh is the experiments shell for all the code, we will revise the version in the later version. 

@@ -1,0 +1,34 @@
+#!/bin/bash
+
+# Network Paramters
+# rm response_times.log
+# rm flow*
+
+
+mice_load=(0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 0.95)
+pruning=(1)
+delegation=(1)
+ArbsInRack=0
+sim_time=3 # in seconds
+av_fsize=(100) #KB
+SRC="TCP/CTP"
+ns="/home/zhanghan/ns-pfabric/ns-allinone-2.34/bin/ns"
+
+
+for ((n=0; n<${#delegation[*]}; n++))
+do
+	for ((i=0; i<${#pruning[*]}; i++))
+	do
+	    for ((j=0; j<${#av_fsize[*]}; j++))
+	    do
+		for ((m=0; m<${#mice_load[*]}; m++))
+		do
+		    $ns pase_simple.tcl ${mice_load[$m]} ${pruning[$i]} ${delegation[$n]} $ArbsInRack ${av_fsize[$j]} $sim_time $SRC 
+		    cp Out.ns Out-${mice_load[$m]}-${pruning[$i]}-${av_fsize[$j]}.ns
+			mkdir -p stats-${mice_load[$m]}-${pruning[$i]}-${av_fsize[$j]}
+			mv Out-*.ns stats-${mice_load[$m]}-${pruning[$i]}-${av_fsize[$j]}
+			mv qmon.* stats-${mice_load[$m]}-${pruning[$i]}-${av_fsize[$j]}
+		done
+	    done
+	done
+done

@@ -1,0 +1,68 @@
+This file contains any messages produced by compilers while
+running configure, to aid debugging if configure makes a mistake.
+
+configure:565: checking for a BSD compatible install
+configure:618: checking whether build environment is sane
+configure:675: checking whether make sets ${MAKE}
+configure:721: checking for working aclocal
+configure:734: checking for working autoconf
+configure:747: checking for working automake
+configure:760: checking for working autoheader
+configure:773: checking for working makeinfo
+configure:792: checking if malloc debugging is wanted
+configure:816: checking for gcc
+configure:929: checking whether the C compiler (gcc  ) works
+configure:945: gcc -o conftest    conftest.c  1>&5
+configure:942:1: warning: type specifier missing, defaults to 'int' [-Wimplicit-int]
+main(){return(0);}
+^
+1 warning generated.
+configure:971: checking whether the C compiler (gcc  ) is a cross-compiler
+configure:976: checking whether we are using GNU C
+configure:985: gcc -E conftest.c
+configure:1004: checking whether gcc accepts -g
+configure:1037: checking how to run the C preprocessor
+configure:1058: gcc -E  conftest.c >/dev/null 2>conftest.out
+configure:1121: checking for X
+configure:1188: gcc -E  conftest.c >/dev/null 2>conftest.out
+configure:1184:10: fatal error: 'X11/Intrinsic.h' file not found
+#include <X11/Intrinsic.h>
+         ^
+1 error generated.
+configure: failed program was:
+#line 1183 "configure"
+#include "confdefs.h"
+#include <X11/Intrinsic.h>
+configure:1264: gcc -o conftest -g -O2   conftest.c -lXt  1>&5
+configure:1260:1: warning: implicit declaration of function 'XtMalloc' is invalid in C99 [-Wimplicit-function-declaration]
+XtMalloc()
+^
+1 warning generated.
+ld: library not found for -lXt
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+configure: failed program was:
+#line 1257 "configure"
+#include "confdefs.h"
+
+int main() {
+XtMalloc()
+; return 0; }
+configure:1955: checking for float.h
+configure:1965: gcc -E  conftest.c >/dev/null 2>conftest.out
+configure:1955: checking for limits.h
+configure:1965: gcc -E  conftest.c >/dev/null 2>conftest.out
+configure:1955: checking for stdlib.h
+configure:1965: gcc -E  conftest.c >/dev/null 2>conftest.out
+configure:1955: checking for string.h
+configure:1965: gcc -E  conftest.c >/dev/null 2>conftest.out
+configure:1955: checking for strings.h
+configure:1965: gcc -E  conftest.c >/dev/null 2>conftest.out
+configure:1955: checking for unistd.h
+configure:1965: gcc -E  conftest.c >/dev/null 2>conftest.out
+configure:1996: checking for strcasecmp
+configure:2024: gcc -o conftest -g -O2   conftest.c  1>&5
+configure:2008:6: warning: incompatible redeclaration of library function 'strcasecmp' [-Wincompatible-library-redeclaration]
+char strcasecmp();
+     ^
+configure:2008:6: note: 'strcasecmp' is a builtin with type 'int (const char *, const char *)'
+1 warning generated.

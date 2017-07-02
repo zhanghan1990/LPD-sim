@@ -1,0 +1,12 @@
+set terminal postscript eps color
+set size 0.5,0.5
+set output  "bandwidth_eps"
+set xlabel  "time(s)"
+set ylabel  "BandWidth(Mbps)"
+set xrange[0.4:0.8]
+set yrange[0:1200]
+plot  "queue" using 1:2 w l   title "Flow-1" , "queue" using 1:3 w l  title "Flow-2","queue" using 1:4 w l  title "Flow-3","queue" using 1:5 w l  title "Flow-4","queue" using 1:6 w l  title "Flow-5"
+
+
+
+
